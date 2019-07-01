@@ -95,6 +95,9 @@ GEM
     guard-minitest (2.4.4)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
+    haml (5.1.1)
+      temple (>= 0.8.0)
+      tilt
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -204,6 +207,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.1)
+    temple (0.8.1)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -239,6 +243,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
+  haml
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   minitest
