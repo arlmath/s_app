@@ -31,5 +31,6 @@ production:
   <<: *default
   database: db_prod
   url: <%= ENV['DATABASE_URL'] %>
+  port: 5432
   password: <%= ENV['DEPOT_DATABASE_PASSWORD'] %>
 
