@@ -28,7 +28,6 @@ test:
 production:
   <<: *default
   database: db_prod
-  port: 5432
-  username: mirraw
+  username: db
   password: <%= ENV['DEPOT_DATABASE_PASSWORD'] %> 
 
