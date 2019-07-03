@@ -25,7 +25,7 @@ test:
   <<: *default
   database: db_test
 
-  DATABASE_URL="postgres://ktdtzlcasgsbet:f9a5227282a20099b0a51d6147d5917e43c7c2233adccd70de71d674ca77f28b@ec2-54-243-208-234.compute-1.amazonaws.com:5432/d5g76vrv2igpe2"
+DATABASE_URL="postgres://ktdtzlcasgsbet:f9a5227282a20099b0a51d6147d5917e43c7c2233adccd70de71d674ca77f28b@ec2-54-243-208-234.compute-1.amazonaws.com:5432/d5g76vrv2igpe2"
 
 production:
   <<: *default
