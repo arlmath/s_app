@@ -28,6 +28,6 @@ test:
 
 production:
   <<: *default
-  database: db_prod
+  database: db_production
   username: db
   password: <%= ENV['DB_DATABASE_PASSWORD'] %>
