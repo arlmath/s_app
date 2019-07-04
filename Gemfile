@@ -14,6 +14,10 @@ gem 'bootstrap-sass', '>=3.4.1'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'faker'
+gem 'will_paginate',           '3.1.7'
+gem 'bootstrap-will_paginate', '1.0.0'
+
 #PostgresQL
 gem 'pg'
 # Use Uglifier as compressor for JavaScript assets
