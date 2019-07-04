@@ -38,6 +38,15 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
+#######  Mailer
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :test
+host = 'localhost:3000' # Don't use this literally; use your local dev host instead
+# Use this on the cloud IDE.
+config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+# Use this if developing on localhost.
+# config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
