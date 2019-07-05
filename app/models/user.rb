@@ -9,11 +9,13 @@ class User < ApplicationRecord
                format:{with: VALID_EMAIL_REGEX},uniqueness: { case_sensitive: false }
     validates :password,presence: true,length: {minimum:6}
     has_secure_password
+    
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                       BCrypt::Engine.cost
         BCrypt::Password.create(string, cost: cost)
     end
+    
     def User.new_token
         SecureRandom.urlsafe_base64
     end
@@ -23,16 +25,11 @@ class User < ApplicationRecord
         update_attribute(:remember_digest, User.digest(remember_token))
     end
 
-    def authenticated?(remember_token)
-        return false if remember_digest.nil?
-        BCrypt::Password.new(remember_digest).is_password?(remember_token)
-    end
-
     def authenticated?(attribute, token)
         digest = send("#{attribute}_digest")
         return false if digest.nil?
         BCrypt::Password.new(digest).is_password?(token)
-      end
+    end
 
     def forget
         update_attribute(:remember_digest, nil)
@@ -41,12 +38,12 @@ class User < ApplicationRecord
     def activate
         update_attribute(:activated,    true)
         update_attribute(:activated_at, Time.zone.now)
-      end
+    end
     
       # Sends activation email.
-      def send_activation_email
-        UserMailer.account_activation(self).deliver_now
-      end
+    def send_activation_email
+      UserMailer.account_activation(self).deliver_now
+    end
 
     private
 

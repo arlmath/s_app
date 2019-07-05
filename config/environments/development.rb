@@ -44,6 +44,15 @@ config.action_mailer.delivery_method = :test
 host = 'localhost:3000' # Don't use this literally; use your local dev host instead
 # Use this on the cloud IDE.
 config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+ActionMailer::Base.smtp_settings = {
+  :address        => 'smtp.gmail.com',
+  :port           => 587,
+  :authentication => :plain,
+  :user_name      => "aliraza.lakhani@mirraw.com",
+  :password       => "Muntazir@313",
+  :domain         => 'gmail.com',
+  :enable_starttls_auto => true
+}
 # Use this if developing on localhost.
 # config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 
