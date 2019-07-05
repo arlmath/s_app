@@ -49,7 +49,7 @@ ActionMailer::Base.smtp_settings = {
   :port           => 587,
   :authentication => :plain,
   :user_name      => "aliraza.lakhani@mirraw.com",
-  :password       => "Muntazir@313",
+  :password       => ENV['GMAIL_PWD'],
   :domain         => 'gmail.com',
   :enable_starttls_auto => true
 }
